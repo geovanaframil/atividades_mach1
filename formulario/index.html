@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliste-se</title>
+
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        input {
+            padding: 5px 10px 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Aliste-se</h1>
+    <form action="https://bemach1.com.br/html-aula-forms/cadastroRecruta.php" enctype="multipart/form-data" method="post" target="_blank">
+        <div>
+            <label for="email">Seu e-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="seuemail@mail.com">
+        </div>
+        <br>
+        
+        <div>
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha">
+        </div>
+        <br>
+
+        <div>
+            <label for="nomeCompleto">Nome Completo:</label><br>
+            <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Informe seu nome">
+        </div>
+        <br>
+
+        <div>
+            <label for="cpf">CPF (Apenas números)</label><br>
+            <input type="number" id="cpf" name="cpf" placeholder="00000000000">
+        </div>
+        <br>
+
+        <div>
+            <label for="rg">RG (Apenas números)</label><br>
+            <input type="number" id="rg" name="rg" placeholder="00000000000">
+        </div>
+        <br>
+
+        <div>
+            <label for="nascimento">Data de nascimento:</label><br>
+            <input type="date" id="nascimento" name="nascimento">
+        </div>
+        <br>
+
+        <div>
+            <fieldset>
+                <legend>Necessidades especiais</legend>
+                <input type="radio" name="necessidadesEspeciais" value="sim" id="sim">
+                <label for="sim">Sim</label>
+                <br>
+                <input type="radio" name="necessidadesEspeciais" value="nao" id="nao">
+                <label for="nao">Não</label>
+            </fieldset>
+        </div>
+        <br>
+
+        <div>
+            <label for="estado">Estado de residência</label>
+            <select name="estado" id="estado">
+                <option value=""></option>
+                <option value="acre">Acre</option>
+                <option value="alagoas">Alagoas</option>
+                <option value="amapa">Amapá</option>
+                <option value="amazonas">Amazonas</option>
+                <option value="bahia">Bahia</option>
+                <option value="ceara">Ceará</option>
+                <option value="distritoFederal">Distrito Federal</option>
+                <option value="espiritoSanto">Espiríto Santo</option>
+                <option value="goias">Goiás</option>
+                <option value="maranhao">Maranhão</option>
+                <option value="matoGrosso">Mato Grosso</option>
+                <option value="matoGrossoSul">Mato Grosso do Sul</option>
+                <option value="minasGerais">Minas Gerais</option>
+                <option value="para">Pará</option>
+                <option value="paraiba">Paraíba</option>
+                <option value="parana">Paraná</option>
+                <option value="pernambuco">Pernambuco</option>
+                <option value="piaui">Piauí</option>
+                <option value="rioDeJaneiro">Rio de Janeiro</option>
+                <option value="rioGrandeNorte">Rio Grande do Norte</option>
+                <option value="rioGrandeSul">Rio Grande do Sul</option>
+                <option value="rondonia">Rondônia</option>
+                <option value="roraima">Roraima</option>
+                <option value="santaCatarina">Santa Catarina</option>
+                <option value="saoPaulo">São Paulo</option>
+                <option value="sergipe">Sergipe</option>
+                <option value="tocantins">Tocantins</option>
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <fieldset>
+                <legend>Especialização desejada</legend>
+                <input type="checkbox" name="especializacao1" id="especializacao1" value="mecanicaDaAeronave">
+                <label for="especializacao1">Mecânica da aeronave (Back-end)</label>
+                <br><br>
+                <input type="checkbox" name="especializacao2" id="especializacao2" value="montagemDaAeronave">
+                <label for="especializacao2">Montagem da aeronave (Front-end)</label>
+                <br><br>
+                <input type="checkbox" name="especializacao3" id="especializacao3" value="engenheiroDeAeronave">
+                <label for="especializacao3">Engenheiro de aeronaves (FullStack)</label>
+                <br><br>
+                <input type="checkbox" name="especializacao4" id="especializacao4" value="piloto">
+                <label for="especializacao4">Piloto (Tester)</label>
+                <br><br>
+                <input type="checkbox" name="especializacao5" id="especializacao5" value="operadorDeTrafegoAereo">
+                <label for="especializacao5">Operador de Trafego Aéreo (Scrum Master)</label>
+            </fieldset>
+        </div>
+        <br>
+
+        <div>
+            <label for="foto">Adicione sua foto: </label>
+            <input type="file" name="foto" id="foto">
+        </div>
+        <br>
+
+        <input type="submit">
+    </form>
+</body>
+
+</html>
