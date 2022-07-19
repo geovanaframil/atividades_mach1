@@ -1,0 +1,17 @@
+.tabela {
+    width: 400px;
+}
+
+.coluna {
+    border: 1px solid black;
+    padding: 10px;
+    float: left;
+}
+
+.linha:nth-child(odd) {
+    background-color: #E0E0E0;
+}
+
+.linha {
+    float: left;
+}
