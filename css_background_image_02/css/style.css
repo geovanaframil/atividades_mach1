@@ -1,0 +1,16 @@
+body {
+  background-color: #0f0c33;
+}
+
+.logoRepetidoLateral {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 200px;
+  border: 2px solid white;
+  background-image: url(https://bemach1.com.br/wp-content/uploads/2022/02/Logo-Mach-02.svg);
+  background-position: bottom center;
+  background-size: 200%;
+  background-repeat: no-repeat;
+}
