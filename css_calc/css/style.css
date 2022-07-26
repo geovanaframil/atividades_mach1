@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    width: 100vw;
+}
+
+header {
+    background-color: red;
+    height: 100px;
+}
+
+main {
+    background-color: yellow;
+    height: calc(100vh - 200px);
+}
+
+footer {
+    background-color: blue;
+    height: 100px;
+}
