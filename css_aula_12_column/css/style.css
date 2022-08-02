@@ -1,0 +1,14 @@
+.txt_principal {
+    background-color: rgb(255, 225, 229);
+}
+
+div {
+    column-count: 3;
+    column-rule: 4px dotted aqua;
+    text-align: justify;
+}
+
+.txt_principal_colunas {
+    background-color: rgb(255, 225, 229);
+    column-span: all;
+}
