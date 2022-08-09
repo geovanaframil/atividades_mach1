@@ -1,0 +1,21 @@
+@import url(grid.css);
+
+body {
+    text-align: center;
+    color: white;
+}
+
+.f1 {
+  background-color: blueviolet;
+  height: 64px;
+}
+
+.f2 {
+  background-color: aqua;
+  height: 64px;
+}
+
+.f3 {
+  background-color: brown;
+  height: 64px;
+}
