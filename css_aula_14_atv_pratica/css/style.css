@@ -1,0 +1,53 @@
+@import url(grid.css);
+
+html,
+body {
+  margin: 0;
+}
+
+nav,
+footer {
+  height: 40px;
+}
+
+nav {
+  background-color: aqua;
+}
+
+.pai {
+    background-color: blueviolet;
+    padding: 15px;
+    height: calc(100vh - 110px);
+}
+
+.filho {
+    background-color: brown;
+    padding: 15px;
+}
+
+.altura {
+    height: 150px;
+    background-color: white;
+}
+
+footer {
+    background-color: chartreuse;
+}
+
+@media screen and (max-width: 500px) {
+    .pai {
+        height: max-content;
+    }
+    .mobile {
+        grid-column: span 12;
+    }
+    .mobile-2 {
+        grid-column: span 6;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .row {
+        grid-column: span 12;
+    }
+}
