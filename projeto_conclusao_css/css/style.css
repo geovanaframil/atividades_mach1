@@ -34,7 +34,7 @@ body {
     width: 72rem;
     margin: 0 auto;
     gap: 1.5rem;
-    grid-template-columns: 360px 454px 290px;
+    grid-template-columns: 22.5rem 28.375rem 18.125rem;
     padding-block: 1.5rem;
 }
 
