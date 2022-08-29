@@ -29,42 +29,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
-    display: grid;
-    width: 72rem;
-    margin: 0 auto;
-    gap: 1.5rem;
-    grid-template-columns: 22.5rem 28.375rem 18.125rem;
-    padding-block: 1.5rem;
-}
-
-textarea {
-    width: 100%;
-    font-family: 'Roboto';
-    font-size: 1rem;
-    padding: 0.75rem;
-    border: 1px solid var(--colors-border-inputs);
-    border-radius: var(--border-radius);
-    resize: none;
-}
-
-textarea::placeholder {
-    color: var(--colors-txt-placeholder);
-}
-
-input:hover,
-textarea:hover {
-    cursor: pointer;
-}
-input:focus,
-textarea:focus {
-    outline: 0;
-    border: 1px solid #949494;
-    box-shadow: 0px 0px 0px 2px #61616129;
-}
-button {
-    border: none;
-}
 /* ------ HEADER ------ */
 
 .header {
@@ -169,6 +133,45 @@ button {
     background-color: transparent;
     border-radius: var(--border-radius);
     padding: 0;
+}
+
+/* ------ CONTAINER ------ */
+
+.container {
+    display: grid;
+    width: 72rem;
+    margin: 0 auto;
+    gap: 1.5rem;
+    grid-template-columns: 22.5rem 28.375rem 18.125rem;
+    padding-block: 1.5rem;
+}
+
+textarea {
+    width: 100%;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--colors-border-inputs);
+    border-radius: var(--border-radius);
+    resize: none;
+}
+
+textarea::placeholder {
+    color: var(--colors-txt-placeholder);
+}
+
+input:hover,
+textarea:hover {
+    cursor: pointer;
+}
+input:focus,
+textarea:focus {
+    outline: 0;
+    border: 1px solid #949494;
+    box-shadow: 0px 0px 0px 2px #61616129;
+}
+button {
+    border: none;
 }
 
 /* ------ DATA-PROFILE ------ */
