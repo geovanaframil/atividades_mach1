@@ -6,3 +6,25 @@
     nomeDoMes(1) // retornará "janeiro"
     nomeDoMes(4) // retornará "abril"
  */
+
+function nomeDoMes(numeroMes) {
+  let arrayMeses = [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
+  ];
+  return arrayMeses[numeroMes - 1] === undefined
+    ? "Informe um número válido"
+    : arrayMeses[numeroMes - 1];
+}
+
+console.log(nomeDoMes(1));

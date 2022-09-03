@@ -5,3 +5,13 @@
  repetir("código", 2) // retornará ["código", "código"]
  repetir(7, 3) // retornará [7, 7, 7]
  */
+
+function repeteNumero(num, repet) {
+  let array = [];
+  for (let i = 0; i < repet; i++) {
+    array.push(num);
+  }
+  return array;
+}
+
+console.log(repeteNumero(7, 3));

@@ -4,3 +4,9 @@
  Exemplo:
  calcularSalario(150, 40.5) // retornará "Salário igual a R$ 6075"
  */
+
+function calcularSalario(qtdHoras, valorHora) {
+  return `Salário igual a R$${qtdHoras * valorHora}`;
+}
+
+console.log(calcularSalario(150, 40.5));
