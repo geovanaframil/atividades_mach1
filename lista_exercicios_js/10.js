@@ -5,3 +5,12 @@ Exemplo:
 converterIdadeEmAnosParaDias(25) // retornará 9125
 converterIdadeEmAnosParaDias(70) // retornará 25550
 */
+
+function converterIdadeEmAnosParaDias(anos) {
+    let diasEmUmAno = 365;
+
+    return anos * diasEmUmAno
+}
+
+console.log(converterIdadeEmAnosParaDias(25))
+console.log(converterIdadeEmAnosParaDias(70))
