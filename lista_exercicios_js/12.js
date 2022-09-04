@@ -27,3 +27,28 @@ despesasTotais([{
     }
 ]) // retornará O total de despesas é: R$ 34599.89
 */
+
+function despesasTotais(arrayProdutos) {
+  let total = 0;
+
+  for (item of arrayProdutos) {
+    total += item.preco;
+  }
+
+  return total;
+}
+
+console.log(
+  despesasTotais([
+    {
+      nome: "Galaxy S20",
+      categoria: "Eletrônicos",
+      preco: 3599.99,
+    },
+    {
+      nome: "Macbook Pro",
+      categoria: "Eletrônicos",
+      preco: 30999.9,
+    },
+  ])
+);
