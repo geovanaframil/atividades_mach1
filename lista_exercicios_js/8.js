@@ -5,3 +5,17 @@ Exemplo:
 calcularMedia([0, 10]) // retornará 5
 calcularMedia([1, 2, 3, 4, 5]) // retornará 3
 */
+
+function calcularMedia(arrayNumeros) {
+    let qtdNumeros = arrayNumeros.length;
+    let soma = 0;
+
+    for(let i = 0; i < arrayNumeros.length; i++) {
+        soma += arrayNumeros[i]
+    }
+
+    return soma / qtdNumeros
+}
+
+console.log(calcularMedia([0, 10]))
+console.log(calcularMedia([1, 2, 3, 4, 5]))
