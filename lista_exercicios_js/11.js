@@ -1,7 +1,17 @@
 /**
-Escreva uma função que receba a idade de uma pessoa em anos e retorne a mesma idade em dias.Obs: considere que um ano tem 365 dias.
-Desconsidere anos bissextos(com 366 dias) e desconsidere também dias decorridos desde o último aniversário.
+Crie uma função que retorna a string "Olá, "
+concatenada com um argumento text(a ser passado para a função) e com ponto de exclamação "!"
+no final.
 Exemplo:
-converterIdadeEmAnosParaDias(25) // retornará 9125
-converterIdadeEmAnosParaDias(70) // retornará 25550
+cumprimentar("Leonardo") // retornará "Olá, Leonardo!"
+cumprimentar("Maria") // retornará "Olá, Maria!"
 */
+
+function cumprimentar(nome) {
+    let texto = `Olá, ${nome}!`
+
+    return texto
+}
+
+console.log(cumprimentar('Leonardo'))
+console.log(cumprimentar('Maria'))
