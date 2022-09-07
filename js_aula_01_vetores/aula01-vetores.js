@@ -34,7 +34,7 @@ if(incluiProduto == 's') {
   let nomeProduto = prompt('Digite o nome do produto: ');
   let incluiProduto = [codigo, nomeProduto];
   listaProdutos.push(incluiProduto);
-  msgProdutoIncluso = `Produto incluído com sucesso: ${codigo} ${nomeProduto}`
+  msgProdutoIncluso = `Produto incluído com sucesso: ${codigo} - ${nomeProduto}`
 } else if(incluiProduto == 'n') {
   msgProdutoIncluso = `Obrigada, volte sempre`
 } else {
