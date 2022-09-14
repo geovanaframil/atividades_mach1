@@ -12,17 +12,30 @@ Dicas importantes:
 ● Leve suas dúvidas para as mentorias, é sempre uma boa oportunidade para aprender mais detalhes sobre a matéria.
 ● Utilize CPFs gerados através de geradores de CPF na internet.*/
 
-let recebeCpf = prompt('Digite o seu CPF (Apenas números)');
-recebeCpf = recebeCpf.toString();
+let recebeCpf = prompt("Digite o seu CPF (Apenas números)");
 
 function qtdCaracteres(cpf) {
-    let validaCpf = false;
-    if(cpf.length === 11) {
-        validaCpf = true
-    }
-    return validaCpf
+  let validaCpf = false;
+  if (!isNaN(cpf) && cpf.length === 11) {
+    validaCpf = true;
+  }
+  return validaCpf;
 }
 
 function formataCpf(cpf) {
-
+  let formatandoCpf = `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(
+    6,
+    9
+  )}-${cpf.slice(9, 11)}`;
+  return formatandoCpf;
 }
+
+function exibeAlert() {
+  let msg = `Cpf inválido!`;
+  if (qtdCaracteres(recebeCpf)) {
+    msg = formataCpf(recebeCpf);
+  }
+  return msg;
+}
+
+alert(exibeAlert());
