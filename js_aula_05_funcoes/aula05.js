@@ -1,18 +1,38 @@
-let recebeCpfs = prompt("Informe 5 cpfs separados por vírgula:");
+let recebeCpfs = prompt("Informe 5 cpfs separados por vírgula e sem espaços:");
 recebeCpfs = recebeCpfs.split(",");
 
-function validaCpf(cpfs) {
+function validaCpf(cpf) {
   let cpfsValidos = false;
-  for (let cpf of cpfs) {
-    if (cpf.length === 11) {
-      cpfsValidos = true;
-    }
+  if (!isNaN(cpf) && cpf.length === 11) {
+    cpfsValidos = true;
   }
   return cpfsValidos;
 }
 
-function formataCpf(cpfs) {
-  
+function formataCpf(cpf) {
+  let cpfFormatado = `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(
+    6,
+    9
+  )}-${cpf.slice(9, 11)}`;
+  return cpfFormatado;
 }
 
-console.log(formataCpf(recebeCpfs))
+function exibeCpf(arrCpf) {
+  let cpfValido = "";
+  let cpfFormatado = "";
+  let msg = "";
+
+  for (cpf of arrCpf) {
+    cpfValido = validaCpf(cpf.toString());
+    if (validaCpf(cpf)) {
+      cpfFormatado = formataCpf(cpf);
+      msg = `O cpf: ${cpfFormatado} é ${cpfValido}.`;
+    } else {
+      cpfFormatado = cpf;
+      msg = `O cpf: ${cpf} é ${cpfValido}`
+    }
+    alert(msg);
+  }
+}
+
+exibeCpf(recebeCpfs);
