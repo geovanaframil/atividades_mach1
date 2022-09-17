@@ -18,18 +18,16 @@ function formataCpf(cpf) {
 }
 
 function exibeCpf(arrCpf) {
-  let cpfValido = "";
   let cpfFormatado = "";
   let msg = "";
 
   for (cpf of arrCpf) {
-    cpfValido = validaCpf(cpf.toString());
     if (validaCpf(cpf)) {
       cpfFormatado = formataCpf(cpf);
-      msg = `O cpf: ${cpfFormatado} é ${cpfValido}.`;
+      msg = `O cpf: ${cpfFormatado} é válido.`;
     } else {
       cpfFormatado = cpf;
-      msg = `O cpf: ${cpf} é ${cpfValido}`
+      msg = `O cpf: ${cpf} é inválido`
     }
     alert(msg);
   }
