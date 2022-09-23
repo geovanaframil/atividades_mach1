@@ -27,19 +27,26 @@
         </div>
         <div class="cpf">
           <label for="cpf">CPF:</label>
-          <input type="number" />
+          <input type="number" id="cpf" />
+          <div id="valid-cpf" hidden>
+            <p>Sucesso, CPF válido!</p>
+          </div>
+          <div id="invalid-cpf" hidden>
+            <p>CPF inválido!</p>
+          </div>
         </div>
-        <div class="positive-feedback" hidden>
-            <p>Campos preenchidos corretamente!</p>
+        <div id="positive-feedback" hidden>
+          <p>Campos preenchidos corretamente!</p>
         </div>
-        <div class="negative-feedback" hidden>
-            <p>Ops, algo está errado!</p>
-            <p>Verifique o formulário.</p>
+        <div id="negative-feedback" hidden>
+          <p>Ops, algo está errado!</p>
+          <p>Verifique o formulário.</p>
         </div>
       </form>
       <div class="button">
-        <button type="button">Validar</button>
+        <button type="button" id="button">Validar</button>
       </div>
     </div>
+    <script src="assets/js/dom.js"></script>
   </body>
 </html>
