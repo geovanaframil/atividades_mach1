@@ -30,9 +30,9 @@ elementButton.onclick = () => {
 
   if (validName) {
     elementFeedback.setAttribute("hidden", "false");
-    elementParagraphName1.innerHTML += ` ${nameValue1}`;
-    elementParagraphName2.innerHTML += ` ${nameValue2}`;
-    elementParagraphName3.innerHTML += ` ${nameValue3}`;
+    elementParagraphName1.innerHTML = `<p>Nome1: ${nameValue1}</p>`;
+    elementParagraphName2.innerHTML = `<p>Nome2: ${nameValue2}</p>`;
+    elementParagraphName3.innerHTML = `<p>Nome3: ${nameValue3}</p>`;
   } else {
     displayingMessage();
   }
