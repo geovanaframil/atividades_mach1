@@ -1,0 +1,48 @@
+body {
+  font-family: "Roboto";
+  background-color: rgb(175, 247, 223);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Roboto";
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+input {
+  height: 25px;
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+button {
+  border: none;
+  background-color: crimson;
+  color: white;
+  height: 30px;
+  width: 260px;
+  border-radius: 4px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.name1 p,
+.name2 p,
+.name3 p {
+  font-weight: 500;
+}
