@@ -29,6 +29,7 @@ elementButton.onclick = () => {
   let validName = validField(nameValue1, nameValue2, nameValue3);
 
   if (validName) {
+    elementFeedback.setAttribute("hidden", "false");
     elementParagraphName1.innerHTML += ` ${nameValue1}`;
     elementParagraphName2.innerHTML += ` ${nameValue2}`;
     elementParagraphName3.innerHTML += ` ${nameValue3}`;
