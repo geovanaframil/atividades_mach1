@@ -37,6 +37,11 @@ button {
   border-radius: 4px;
 }
 
+.feedback {
+    color: red;
+    font-weight: 500;
+}
+
 h3 {
   text-align: center;
 }

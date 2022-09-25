@@ -33,7 +33,11 @@
             <input type="text" id="name3" />
           </div>
           <div class="button">
-            <button>Salvar</button>
+            <button id="save">Salvar</button>
+          </div>
+          <div class="feedback" hidden>
+            <p>Ops, algo deu errado!</p>
+            <p>Verifique o formulário.</p>
           </div>
         </form>
       </section>
@@ -42,15 +46,16 @@
             <h3>DADOS PREENCHIDOS:</h3>
         </div>
         <div class="name1">
-            <p>Nome1:</p>
+            <p id="name-paragrapf-1">Nome1:</p>
         </div>
         <div class="name2">
-            <p>Nome2:</p>
+            <p id="name-paragrapf-2">Nome2:</p>
         </div>
         <div class="name3">
-            <p>Nome3:</p>
+            <p id="name-paragrapf-3">Nome3:</p>
         </div>
       </section>
     </div>
+    <script src="assets/js/dom.js"></script>
   </body>
 </html>
