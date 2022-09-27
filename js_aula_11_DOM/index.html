@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <h1>Cadastro Simples</h1>
+      </header>
+      <form action="#">
+        <div class="name">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" />
+        </div>
+        <div class="email">
+          <label for="email">Email:</label>
+          <input type="text" id="email" />
+        </div>
+        <div class="phone">
+          <label for="phone">Telefone:</label>
+          <input type="number" id="phone" />
+        </div>
+        <div id="positive-feedback" hidden>
+          <p>Campos preenchidos corretamente!</p>
+        </div>
+        <div id="negative-feedback" hidden>
+          <p>Ops, algo está errado!</p>
+          <p>Verifique o formulário.</p>
+        </div>
+      </form>
+      <div class="button">
+        <button type="button" id="btn-save">Salvar</button>
+        <button type="button" id="btn-conclude">Concluir</button>
+      </div>
+    </div>
+  </body>
+</html>
