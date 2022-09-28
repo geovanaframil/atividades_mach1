@@ -8,10 +8,14 @@ let concludeButtonElement = document.querySelector("#btn-conclude");
 let completedForm = [];
 
 let cleanForm = () => {
-    nameElement.value = '';
-    emailElement.value = '';
-    phoneElement.value = '';
-}
+  nameElement.value = "";
+  emailElement.value = "";
+  phoneElement.value = "";
+};
+
+let showMsg = () => {
+  alert("Verifique o formulário");
+};
 
 let validField = (nameField, emailField, phoneField) => {
   if (
@@ -39,13 +43,19 @@ let saveForm = () => {
 
   if (validForm) {
     completedForm.push(form);
-    console.log(completedForm);
   } else {
-    console.log("ERRO!");
+    showMsg();
   }
 
   cleanForm();
 };
 
+let showList = () => {
+  let formElement = document.querySelector("#form");
+  let listElement = document.querySelector('#list');
+  formElement.setAttribute('class', 'inactive');
+  listElement.setAttribute('class', 'active');
+};
 
-saveButtonElement.addEventListener('click', saveForm)
+saveButtonElement.addEventListener("click", saveForm);
+concludeButtonElement.addEventListener("click", showList);
