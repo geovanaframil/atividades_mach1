@@ -13,8 +13,8 @@ let cleanForm = () => {
   phoneElement.value = "";
 };
 
-let showMsg = () => {
-  alert("Verifique o formulário");
+let showMsg = (msg) => {
+  alert(msg);
 };
 
 let validField = (nameField, emailField, phoneField) => {
@@ -35,27 +35,38 @@ let saveForm = () => {
 
   let validForm = validField(nameValue, emailValue, phoneValue);
 
-  let form = {
-    name: nameValue,
-    email: emailValue,
-    phone: phoneValue,
-  };
-
   if (validForm) {
+    let form = {
+      name: nameValue,
+      email: emailValue,
+      phone: phoneValue,
+    };
     completedForm.push(form);
+    cleanForm();
+    showMsg("Tudo certo por aqui!");
   } else {
-    showMsg();
+    showMsg("Algo está errado, verifique o formulário!");
   }
-
-  cleanForm();
 };
 
-let showList = () => {
+let showList = (elemento) => {
+  let lineList = `<tr>
+                  <td>${elemento.name}</td>
+                  <td>${elemento.email}</td>
+                  <td>${elemento.phone}</td>
+                  </tr>`;
+  let tBodyElement = document.querySelector("#show-list");
+  tBodyElement.innerHTML = lineList;
+};
+
+let concludeForm = () => {
   let formElement = document.querySelector("#form");
-  let listElement = document.querySelector('#list');
-  formElement.setAttribute('class', 'inactive');
-  listElement.setAttribute('class', 'active');
+  let listElement = document.querySelector("#list");
+  formElement.setAttribute("class", "inactive");
+  listElement.setAttribute("class", "active");
+  completedForm.forEach(showList);
+
 };
 
 saveButtonElement.addEventListener("click", saveForm);
-concludeButtonElement.addEventListener("click", showList);
+concludeButtonElement.addEventListener("click", concludeForm);
