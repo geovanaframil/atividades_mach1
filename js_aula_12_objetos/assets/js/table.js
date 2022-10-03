@@ -1,5 +1,3 @@
-let tBodyElement = document.querySelector("#result");
-
 const listaUsuarios = [
   {
     id: 1,
@@ -32,6 +30,7 @@ const listaUsuarios = [
 ];
 
 function listarUsuarios(item) {
+  let bodyElemento = document.querySelector("#resultado");
   let trTds = `<tr>
               <td>${item.id}</td>
               <td>${item.nome}</td>
@@ -39,7 +38,7 @@ function listarUsuarios(item) {
               <td>${item.idade}</td>
               <td>${item.email}</td>
               </tr>`;
-  tBodyElement.innerHTML = trTds;
+  bodyElemento.innerHTML += trTds;
 }
 
 listaUsuarios.forEach(listarUsuarios);
