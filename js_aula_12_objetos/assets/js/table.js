@@ -1,4 +1,4 @@
-let tBodyElement = document.querySelector('#result');
+let tBodyElement = document.querySelector("#result");
 
 const listaUsuarios = [
   {
@@ -30,3 +30,18 @@ const listaUsuarios = [
     email: "manuelatrait@gtepmail.com",
   },
 ];
+
+function listarUsuarios(item) {
+  let trTds = `<tr>
+              <td>${item.id}</td>
+              <td>${item.nome}</td>
+              <td>${item.sexo}</td>
+              <td>${item.idade}</td>
+              <td>${item.email}</td>
+              </tr>`;
+  tBodyElement.innerHTML = trTds;
+}
+
+listaUsuarios.forEach(listarUsuarios);
+
+window.addEventListener('onload', listarUsuarios)
