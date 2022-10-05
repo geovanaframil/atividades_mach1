@@ -1,0 +1,30 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(225, 220, 220);
+  margin: 40px;
+}
+.form {
+  background: white;
+  width: 40%;
+  height: auto;
+  padding: 10px;
+}
+input {
+  margin: 5px;
+  height: 30px;
+}
+input:hover {
+  cursor: pointer;
+}
+.titulo {
+  background: white;
+  text-align: center;
+}
+#numero {
+  border-radius: solid black 4px;
+}
+#numero:hover {
+  outline: outset blue;
+}
