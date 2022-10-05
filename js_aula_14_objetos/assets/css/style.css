@@ -26,7 +26,7 @@
   padding: 7px 0;
 }
 
-/* Style inputs, select elements and textareas */
+/* Estilo inputs, elementos select e textareas */
 input[type="text"],
 select,
 textarea {
@@ -38,13 +38,13 @@ textarea {
   resize: vertical;
 }
 
-/* Style the label to display next to the inputs */
+/* Estiliza a label para mostrar ao lado dos inputs */
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
 
-/* Style the button button */
+/* Estiliza botão */
 input[type="button"] {
   background-color: #04aa6d;
   color: white;
@@ -53,34 +53,34 @@ input[type="button"] {
   cursor: pointer;
 }
 
-/* Style the container */
+/* Estiliza o container */
 .container {
   border-radius: 5px;
   padding: 20px;
 }
 
-/* Floating column for labels: 25% width */
+/* Coluna flutuante para labels: 25% width */
 .col-25 {
   float: left;
   width: 25%;
   margin-top: 6px;
 }
 
-/* Floating column for inputs: 75% width */
+/* Coluna flutuante para inputs: 75% width */
 .col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
 }
 
-/* Clear floats after the columns */
+/* Limpa a flutuação depois das colunas */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* Layout responsivo - quando a tela tiver menos de 600px de largura, faça as duas colunas empilharem uma sobre a outra em vez de uma ao lado da outra */
 @media screen and (max-width: 600px) {
   .col-25,
   .col-75,
