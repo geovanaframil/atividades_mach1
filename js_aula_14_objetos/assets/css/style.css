@@ -9,7 +9,7 @@ body {
 
 .col-75,
 .col-25,
-.rTable {
+.content {
   display: flex;
   justify-content: center;
 }
@@ -24,7 +24,7 @@ input {
 }
 
 input[type="text"] {
-  width: 250px;
+  width: 450px;
   height: 25px;
 }
 
@@ -40,12 +40,21 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 th {
   background-color: rgb(0, 0, 0);
-  padding: 10px;
+  padding: 10px 40px;
   color: white;
   font-weight: 400;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
 }
