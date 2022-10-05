@@ -1,131 +1,51 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  font-family: "Roboto";
 }
 
-.content {
-  display: flex;
-  margin: auto;
-}
-
-.rTable {
-  width: 100%;
-  text-align: center;
-}
-.rTable thead {
-  background: black;
-  font-weight: bold;
-  color: #fff;
-}
-.rTable tbody tr:nth-child(2n) {
-  background: #ccc;
-}
-.rTable th,
-.rTable td {
-  padding: 7px 0;
-}
-
-/* Estilo inputs, elementos select e textareas */
-input[type="text"],
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
-/* Estiliza a label para mostrar ao lado dos inputs */
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-/* Estiliza botão */
-input[type="button"] {
-  background-color: #04aa6d;
-  color: white;
-  padding: 12px 20px;
-  border: 1px solid green;
-  cursor: pointer;
-}
-
-/* Estiliza o container */
 .container {
-  border-radius: 5px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 1;
 }
 
-/* Coluna flutuante para labels: 25% width */
+.col-75,
+.col-25,
+.rTable {
+  display: flex;
+  justify-content: center;
+}
+
 .col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
+  gap: 10px;
 }
 
-/* Coluna flutuante para inputs: 75% width */
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
+input {
+  margin-bottom: 10px;
+  padding: 5px;
 }
 
-/* Limpa a flutuação depois das colunas */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+input[type="text"] {
+  width: 250px;
+  height: 25px;
 }
 
-/* Layout responsivo - quando a tela tiver menos de 600px de largura, faça as duas colunas empilharem uma sobre a outra em vez de uma ao lado da outra */
-@media screen and (max-width: 600px) {
-  .col-25,
-  .col-75,
-  input[type="button"] {
-    width: 100%;
-    margin-top: 0;
-  }
+input[type="button"] {
+  padding: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  font-family: "Roboto";
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-@media screen and (max-width: 480px) {
-  .content {
-    width: 94%;
-  }
-  .box {
-    display: flex;
-    align-items: right;
-    justify-content: center;
-  }
-
-  .rTable thead {
-    display: none;
-  }
-  .rTable tbody td {
-    display: flex;
-    flex-direction: column;
-  }
+input[type="button"]:hover {
+    cursor: pointer;
 }
 
-@media only screen and (min-width: 1200px) {
-  .content {
-    width: 100%;
-  }
-  .rTable tbody tr td:nth-child(1) {
-    width: 10%;
-  }
-  .rTable tbody tr td:nth-child(2) {
-    width: 30%;
-  }
-  .rTable tbody tr td:nth-child(3) {
-    width: 20%;
-  }
-  .rTable tbody tr td:nth-child(4) {
-    width: 10%;
-  }
-  .rTable tbody tr td:nth-child(5) {
-    width: 30%;
-  }
+th {
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  color: white;
+  font-weight: 400;
 }
