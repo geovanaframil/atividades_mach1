@@ -59,23 +59,23 @@ let filtraDados = () => {//Função que filtra os dados solicitados;
   let filtrados = [];//Variável que recebe um array vazio;
 
   if (pesquisa.value.toLowerCase() !== "") {//Verifica se o valor do input (convertido já em minúsculo) é diferente de vazio;
-    filtrados = listaUsuarios.filter(
+    filtrados = listaUsuarios.filter(//Atribui à variável filtrados um método que vai filtrar um dado de acordo com as condições abaixo;
       (usuario) =>
-        usuario.id.toString().indexOf(pesquisa.value) > -1 ||
-        usuario.nome.toLowerCase().indexOf(pesquisa.value.toLowerCase()) > -1 ||
-        usuario.sexo.toLowerCase().indexOf(pesquisa.value.toLowerCase()) > -1 ||
-        usuario.idade.toString().indexOf(pesquisa.value) > -1 ||
-        usuario.email.toLowerCase().indexOf(pesquisa.value.toLowerCase()) > -1
+        usuario.id.toString().indexOf(pesquisa.value) > -1 ||//Converte o ID de cada objeto dentro de listaUsuarios para string e faz uma busca do valor digitado no input, retornando um índice numérico caso exista ou -1 caso não exista e por fim verifica se o resultado é maior que -1, pois se for, significa que foi encontrado
+        usuario.nome.toLowerCase().indexOf(pesquisa.value.toLowerCase()) > -1 ||//Passa todo NOME de cada objeto dentro de listaUsuarios para minúsculo e converte também o valor que foi digitado no input para minúsculo; faz uma busca do valor digitado no input, retornando um índice numérico caso exista ou -1 caso não exista e por fim verifica se o resultado é maior que -1, pois se for, significa que foi encontrado
+        usuario.sexo.toLowerCase().indexOf(pesquisa.value.toLowerCase()) > -1 ||//Passa todo SEXO de cada objeto dentro de listaUsuarios para minúsculo e converte também o valor que foi digitado no input para minúsculo; faz uma busca do valor digitado no input, retornando um índice numérico caso exista ou -1 caso não exista e por fim verifica se o resultado é maior que -1, pois se for, significa que foi encontrado
+        usuario.idade.toString().indexOf(pesquisa.value) > -1 ||//Converte a IDADE de cada objeto dentro de listaUsuarios para string e faz uma busca do valor digitado no input, retornando um índice numérico caso exista ou -1 caso não exista e por fim verifica se o resultado é maior que -1, pois se for, significa que foi encontrado
+        usuario.email.toLowerCase().indexOf(pesquisa.value.toLowerCase()) > -1//Passa todo EMAIL de cada objeto dentro de listaUsuarios para minúsculo e converte também o valor que foi digitado no input para minúsculo; faz uma busca do valor digitado no input, retornando um índice numérico caso exista ou -1 caso não exista e por fim verifica se o resultado é maior que -1, pois se for, significa que foi encontrado
     );
-  } else {
+  } else {//Varificação para caso a condição acima não seja atendida, a variável filtrados vai receber apenas a variável listaUsuarios
     filtrados = listaUsuarios;
   }
   listarUsuariosNaTabela(filtrados);
 };
 
-let limpaFormulario = () => {
-  pesquisa.value = "";
-  listarUsuariosNaTabela(listaUsuarios);
+let limpaFormulario = () => {//Função para limpar o que foi digitado no input;
+  pesquisa.value = "";//Atribui ao valor do input uma string vazia, pois é isso que fará com que o input fique "zerado";
+  listarUsuariosNaTabela(listaUsuarios);//Chama a função listarUsuariosNaTabela com o parâmetro listaUsuários, para que continue sendo exibido a tabela com os objetos listaUsuarios
 };
 
 window.addEventListener("onload", listarUsuariosNaTabela()); //Executa a função listarUsuariosNaTabela no momento em que a página é carregada
