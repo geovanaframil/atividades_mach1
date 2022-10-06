@@ -1,6 +1,4 @@
 let elementoInput = document.querySelector('#pesquisa');
-let btnPesquisa = document.querySelector('#btnPesquisar');
-let btnLimpar = document.querySelector('#btnLimpar');
 
 let shoppingCart = [
   {
@@ -34,7 +32,3 @@ let shoppingCart = [
     price: 16.99,
   },
 ];
-
-let price = shoppingCart.map((item) => {
-    return item.price;
-});
