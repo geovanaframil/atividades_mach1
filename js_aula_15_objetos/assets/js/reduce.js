@@ -1,4 +1,4 @@
-let elementoInput = document.querySelector('#pesquisa');
+let elementoTBody = document.querySelector("#resultado");
 
 let shoppingCart = [
   {
@@ -32,3 +32,31 @@ let shoppingCart = [
     price: 16.99,
   },
 ];
+
+let exibeTabela = (item) => {
+  let linhaTabela = `<tr>
+                      <td>${item.product}</td>
+                      <td>${item.measure}</td>
+                      <td>${item.qty}</td>
+                      <td>${item.price}</td>
+                      </tr>`;
+
+  elementoTBody.innerHTML += linhaTabela;
+};
+
+let formatarTotal = (resultado) => {
+  let linhaFormatada = `<tr>
+                        <td colspan = "4">Valor total: ${resultado}</td>
+                        </tr>`;
+  elementoTBody.innerHTML += linhaFormatada;
+};
+
+let precoTotal = shoppingCart.reduce((total, objAtual) => {
+  return total + objAtual.qty * objAtual.price;
+}, 0);
+
+shoppingCart.forEach(exibeTabela);
+
+formatarTotal(precoTotal);
+
+window.addEventListener("onload", exibeTabela);
