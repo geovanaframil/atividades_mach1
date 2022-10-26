@@ -1,18 +1,23 @@
 const clientes = ['Jorge', 'Maria', 'Manoel', 'João', 'Roberto', 'Vera'];
 
 
-let ordemRecebeProduto = (arrClientes, tempoPedido = 15, nomeCliente) => {
-    if(arrClientes.length == 0) {
-        return 1;
+let tempoEspera = 15;
+
+let somaTempoEspera = (arrClientes, nomeCliente) => {
+    let indexArray = arrClientes.length - 1;
+    let clienteAtual = arrClientes[indexArray];
+    if(clienteAtual == nomeCliente) {
+        console.log(`Resultado (${tempoEspera})`);
+    }else if (indexArray == 0) {
+        console.log(null)
     } else {
-        console.log(arrClientes[arrClientes.length -1], tempoPedido)
-        arrClientes.pop()
-        ordemRecebeProduto(arrClientes, tempoPedido + 15)
+        tempoEspera += 15;
+        arrClientes.pop();
+        somaTempoEspera(arrClientes, nomeCliente)
     }
 }
 
-
-ordemRecebeProduto(clientes)
+somaTempoEspera(clientes, "Geovana")
 
 
 
