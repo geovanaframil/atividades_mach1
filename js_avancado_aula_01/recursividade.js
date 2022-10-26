@@ -1,20 +1,23 @@
 const clientes = ['Jorge', 'Maria', 'Manoel', 'João', 'Roberto', 'Vera'];
 
 
-let tempoEspera = 15;
 
-let somaTempoEspera = (arrClientes, nomeCliente) => {
-    let indexArray = arrClientes.length - 1;
-    let clienteAtual = arrClientes[indexArray];
-    if(clienteAtual == nomeCliente) {
-        console.log(`Resultado (${tempoEspera})`);
-    }else if (indexArray == 0) {
-        console.log(null)
+
+let calcularTempoSaida = (listaClientes, nomeCliente, index = 0) => {
+    let tempoEspera = 15;
+    let numeroClientes = listaClientes.length;
+
+    if(numeroClientes === index) {
+        return null
+    }else if (listaClientes[index] === nomeCliente) {
+        return (numeroClientes - index) * tempoEspera
     } else {
-        tempoEspera += 15;
-        arrClientes.pop();
-        somaTempoEspera(arrClientes, nomeCliente)
+        index++
+        return calcularTempoSaida(listaClientes, nomeCliente, index)
     }
 }
 
-somaTempoEspera(clientes, "Geovana")
+console.log(calcularTempoSaida(clientes, "Vera"))
+console.log(calcularTempoSaida(clientes, "Manoel"))
+console.log(calcularTempoSaida(clientes, "Jorge"))
+console.log(calcularTempoSaida(clientes, "Jonas"))
