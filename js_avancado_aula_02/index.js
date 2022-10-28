@@ -1,8 +1,8 @@
 const montarTabuada = (numeroDaTabuada) =>{
     let total = 0;
-    let tabuada =  function (number1,number2){
-        if(number1 <= number2){
-            for(let i = number1; i <= number2; i++){
+    let tabuada =  function (numero1,numero2){
+        if(numero1 <= numero2){
+            for(let i = numero1; i <= numero2; i++){
                 total = i * numeroDaTabuada
                 console.log(`${i} X ${numeroDaTabuada} = ${total}`)
             }
