@@ -1,10 +1,10 @@
-const criarContadorNumerico = (count) => {
+const criarContadorNumerico = (contador) => {
     let alunos = 0;
-    let numberLooping = () => {
-        alunos = count++
+    let numeroLoop = () => {
+        alunos = contador++
         console.log(alunos)
     }
-    return numberLooping;
+    return numeroLoop;
 };
 
 
