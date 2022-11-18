@@ -45,22 +45,24 @@ const buscarPorNomeOuTodos = () => {
     url = `http://localhost:3000/aluno/search?nome=${inputNome}`;
   }
 
-  fetch(url).then((response) => {
-    if (response.ok) {
-      divDados.innerHTML = "";
-      return response.json();
-    }
-  })
-  .then((jsonData) => {
-    if (jsonData.length == 0) {
-      divDados.innerHTML = "Nenhuma informação encontrada";
-      return;
-    }
-    jsonData.forEach((element) => {
-      divDados.innerHTML += `<p>${element.matricula} - ${element.nome}`;
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        divDados.innerHTML = "";
+        return response.json();
+      }
+    })
+    .then((jsonData) => {
+      if (jsonData.length == 0) {
+        divDados.innerHTML = "Nenhuma informação encontrada";
+        return;
+      }
+      jsonData.forEach((element) => {
+        divDados.innerHTML += `<p>${element.matricula} - ${element.nome}`;
+      });
     });
-  });
 };
+
 
 btnBuscarMatricula.addEventListener("click", buscarPorMatricula);
 btnBuscar.addEventListener("click", buscarPorNomeOuTodos);
