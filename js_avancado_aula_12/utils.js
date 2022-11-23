@@ -8,7 +8,7 @@ class ArquivoProcessado {
 export function ProcessarArquivos(arquivos) {
   return arquivos.map((arquivo) => {
     let sucesso = Math.round(Math.random()) == 0 ? false : true;
-    let time = Math.random() * 10000;
+    let time = 1000;
 
     return new Promise((resolve, reject) => {
       console.log(`Arquivo ${arquivo} é ${sucesso}`);
