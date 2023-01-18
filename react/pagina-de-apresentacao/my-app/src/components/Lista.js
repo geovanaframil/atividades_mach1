@@ -4,7 +4,7 @@ function Lista(props) {
   return (
     <ul>
       {props.textos.map((valor) => {
-        return <Item texto={valor} />;
+        return <Item ativo texto={valor} />;
       })}
     </ul>
   );
