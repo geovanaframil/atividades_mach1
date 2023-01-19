@@ -1,0 +1,28 @@
+.listDataPerson {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  background-color: darkred;
+}
+
+.link {
+  width: 100px;
+  list-style: none;
+  display: inline-block;
+  font-size: 25px;
+}
+
+button {
+  height: 34px;
+  width: 70px;
+  background-color: darkgray;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+button:hover {
+  cursor: pointer;
+}
