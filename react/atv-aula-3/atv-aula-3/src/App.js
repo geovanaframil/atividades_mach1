@@ -6,8 +6,25 @@ function App() {
   return (
     <div>
       <MainHeader link1="Home" link2="Sobre" link3="Contato" />
-      <div>
-        <ArticlePreview img={"./foto.jpg"} title="My Title" description= "dsbiwhbfbpibpiwb" link="Leia mais..."/>
+      <div className="containerArticles">
+        <ArticlePreview
+          img={"./foto.jpg"}
+          title="My Title"
+          description="dsbiwhbfbpibpiwb"
+          link="Leia mais..."
+        />
+        <ArticlePreview
+          img={"./foto.jpg"}
+          title="My Title"
+          description="dsbiwhbfbpibpiwb"
+          link="Leia mais..."
+        />
+        <ArticlePreview
+          img={"./foto.jpg"}
+          title="My Title"
+          description="dsbiwhbfbpibpiwb"
+          link="Leia mais..."
+        />
       </div>
     </div>
   );

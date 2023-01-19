@@ -1,3 +1,9 @@
+.containerArticles {
+  display: flex;
+  margin-top: 70px;
+  justify-content: space-around;
+}
+
 .App {
   text-align: center;
 }

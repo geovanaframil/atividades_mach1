@@ -4,4 +4,14 @@ img {
 
 .myArticle {
     display: block;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+h2, p {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
 }
