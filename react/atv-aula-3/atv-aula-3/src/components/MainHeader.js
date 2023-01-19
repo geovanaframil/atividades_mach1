@@ -5,7 +5,9 @@ import "./MainHeader.css";
 function MainHeader({ link1, link2, link3 }) {
   return (
     <header className="header">
-      <Title />
+      <div className="headerTitle">
+        <Title />
+      </div>
       <nav className="listDataPerson">
         <ButtonLink texto={link1} link={"https://github.com/geovanaframil"} />
         <ButtonLink

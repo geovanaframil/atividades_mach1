@@ -1,12 +1,13 @@
 import ButtonLink from "./ButtonLink";
+import "./ArticlePreview.css"
 
 function ArticlePreview({img, title, description, link}) {
     return (
-        <div>
+        <div className="myArticle">
             <div>
-                <img src={img} />
-                <h2></h2>
-                <p></p>
+                <img src={img} alt="Fotógrafo"/>
+                <h2>{title}</h2>
+                <p>{description}</p>
                 <ButtonLink texto={link} link=""/>
             </div>
         </div>
