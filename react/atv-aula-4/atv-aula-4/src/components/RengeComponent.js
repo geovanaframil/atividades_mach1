@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./RengeComponent.css";
 
 function RangeComponent() {
   const [valorLeft, setValorLeft] = useState(0);
@@ -25,15 +26,15 @@ function RangeComponent() {
   }, [valorLeft, valorRight]);
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="leftRight">
         <button onClick={() => handleClickLeft("remove")}>-</button>
-        <p>Left {valorLeft}</p>
+        <p>LEFT {valorLeft}</p>
         <button onClick={() => handleClickLeft("add")}>+</button>
       </div>
-      <div>
+      <div className="leftRight">
         <button onClick={() => handleClickRight("remove")}>-</button>
-        <p>Right {valorRight}</p>
+        <p>RIGHT {valorRight}</p>
         <button onClick={() => handleClickRight("add")}>+</button>
       </div>
     </div>
