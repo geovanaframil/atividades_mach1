@@ -10,19 +10,22 @@ function RangeComponent() {
   };
 
   const aumentaValorLeft = () => {
-    if(valorLeft === valorRight) {
-      return alert(`Valor do botão left não pode ser maior que ${valorRight}`)
+    if (valorLeft === valorRight) {
+      return alert(`Valor do botão left não pode ser maior que ${valorRight}`);
     }
     setValorLeft(valorLeft + 1);
-  }
-
-  const handleClickRight = (operacao) => {
-    if (operacao === "add") {
-      setValorRight(valorRight + 1);
-    } else {
-      setValorRight(valorRight - 1);
-    }
   };
+
+  const diminuiValorRight = () => {
+    if (valorRight === valorLeft) {
+      return alert(`Valor do botão right não pode ser menor que ${valorLeft}`);
+    }
+    setValorRight(valorRight - 1);
+  };
+
+  const aumentaValorRight = () => {
+    setValorRight(valorRight + 1);
+  }
 
   useEffect(() => {
     console.log(`Contador atualizado ${valorLeft}, ${valorRight}`);
@@ -36,9 +39,9 @@ function RangeComponent() {
         <button onClick={() => aumentaValorLeft()}>+</button>
       </div>
       <div className="leftRight">
-        <button onClick={() => handleClickRight("remove")}>-</button>
+        <button onClick={() => diminuiValorRight()}>-</button>
         <p>RIGHT {valorRight}</p>
-        <button onClick={() => handleClickRight("add")}>+</button>
+        <button onClick={() => aumentaValorRight()}>+</button>
       </div>
     </div>
   );
