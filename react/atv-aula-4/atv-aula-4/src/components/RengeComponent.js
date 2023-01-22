@@ -5,13 +5,16 @@ function RangeComponent() {
   const [valorLeft, setValorLeft] = useState(0);
   const [valorRight, setValorRight] = useState(0);
 
-  const handleClickLeft = (operacao) => {
-    if (valorLeft < valorRight && operacao === "add") {
-      setValorLeft(valorLeft + 1);
-    } else {
-      setValorLeft(valorLeft - 1);
-    }
+  const diminuiValorLeft = () => {
+    setValorLeft(valorLeft - 1);
   };
+
+  const aumentaValorLeft = () => {
+    if(valorLeft === valorRight) {
+      return alert(`Valor do botão left não pode ser maior que ${valorRight}`)
+    }
+    setValorLeft(valorLeft + 1);
+  }
 
   const handleClickRight = (operacao) => {
     if (operacao === "add") {
@@ -28,9 +31,9 @@ function RangeComponent() {
   return (
     <div className="container">
       <div className="leftRight">
-        <button onClick={() => handleClickLeft("remove")}>-</button>
+        <button onClick={() => diminuiValorLeft()}>-</button>
         <p>LEFT {valorLeft}</p>
-        <button onClick={() => handleClickLeft("add")}>+</button>
+        <button onClick={() => aumentaValorLeft()}>+</button>
       </div>
       <div className="leftRight">
         <button onClick={() => handleClickRight("remove")}>-</button>
