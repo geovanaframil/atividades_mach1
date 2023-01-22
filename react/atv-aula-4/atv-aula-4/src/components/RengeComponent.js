@@ -28,7 +28,7 @@ function RangeComponent() {
   }
 
   useEffect(() => {
-    console.log(`Contador atualizado ${valorLeft}, ${valorRight}`);
+    console.log(`Contador atualizado Valor Left: ${valorLeft}, Valor Right: ${valorRight}`);
   }, [valorLeft, valorRight]);
 
   return (
