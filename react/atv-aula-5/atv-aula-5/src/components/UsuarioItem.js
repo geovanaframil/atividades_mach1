@@ -1,9 +1,16 @@
-function UsuarioItem({nome, estado, onClickItem}) {
+import './UsuarioItem.css';
+
+function UsuarioItem({ nome, estado, onClickItem, indice }) {
     return (
-        <div onClick={onClickItem}>
-            {estado ? <p className="itemAtivo">{nome}</p> : <p className="itemInativo">{nome}</p> }
-        </div>
-    )
+        <>
+            <p
+                onClick={() => onClickItem(indice)}
+                className={estado ? 'itemAtivo' : ''}
+            >
+                {nome}
+            </p>
+        </>
+    );
 }
 
-export default UsuarioItem
+export default UsuarioItem;
