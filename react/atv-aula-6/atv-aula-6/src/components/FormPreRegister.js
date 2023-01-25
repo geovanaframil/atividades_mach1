@@ -1,3 +1,5 @@
+import "./FormPreRegister.css";
+
 function FormPreRegister() {
   const enviarDados = (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ function FormPreRegister() {
   return (
     <form onSubmit={enviarDados}>
       <h1>PRÉ CADASTRO</h1>
-      <div>
+      <div className="categoria">
         <h4>Categoria</h4>
         <label htmlFor="aluno">Aluno</label>
         <input name="categoria" type="radio" value="aluno" />
@@ -27,12 +29,12 @@ function FormPreRegister() {
         <input name="categoria" type="radio" value="professor" />
       </div>
 
-      <div>
+      <div className="email">
         <label htmlFor="email">Email</label>
         <input name="email" type="email" />
       </div>
 
-      <div>
+      <div className="sexo">
         <label htmlFor="sexo">Sexo</label>
         <select name="sexo">
           <option defaultValue="masculino">Masculino</option>
@@ -40,12 +42,14 @@ function FormPreRegister() {
         </select>
       </div>
 
-      <div>
+      <div className="aceito">
         <input name="termos" type="checkbox" defaultValue="Aceito" /> Aceito os
         termos de uso
       </div>
 
-      <button type="submit">Registrar</button>
+      <div className="button">
+        <button type="submit">Registrar</button>
+      </div>
     </form>
   );
 }
