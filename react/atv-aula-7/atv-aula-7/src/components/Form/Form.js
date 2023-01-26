@@ -10,7 +10,7 @@ function invalidoNome(nome) {
   return true;
 }
 function invalidaSenha(senha) {
-  if (senha.length >= 4) {
+  if (senha.length >= 6) {
     return false;
   }
   return true;
