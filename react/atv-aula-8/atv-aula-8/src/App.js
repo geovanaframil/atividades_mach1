@@ -1,12 +1,13 @@
-import Routes from "./Routes";
-import "./App.css";
+import Breadcrumb from './components/Breadcrumb/Breadcrumb';
+import { Router } from './router';
 
 function App() {
-  return (
-    <div>
-      <Routes/>
-    </div>
-  );
+    return (
+        <div>
+            <Breadcrumb />
+            <Router />
+        </div>
+    );
 }
 
 export default App;
