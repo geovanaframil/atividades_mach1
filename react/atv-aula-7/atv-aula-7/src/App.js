@@ -1,12 +1,7 @@
-import "./App.css";
-import Form from "./components/Form";
+import FormPreRegister from './components/FormPreRegister';
 
 function App() {
-  return (
-    <div className="App">
-      <Form />
-    </div>
-  );
+    return <FormPreRegister />;
 }
 
 export default App;
