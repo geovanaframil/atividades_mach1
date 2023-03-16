@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "typescript": "^4.9.5"
+  },
+  "name": "cadastro_pessoas",
+  "version": "1.0.0",
+  "description": "Sistema de cadastramento de pessoas",
+  "main": "index.js",
+  "scripts": {
+    "test": "node dist/index"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Turma Mach1",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/prompt-sync": "^4.2.0"
+  }
+}
