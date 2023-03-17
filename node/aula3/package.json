@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "typescript": "^5.0.2"
+  },
+  "name": "cadastro_clientes",
+  "version": "1.0.0",
+  "description": "Algoritmo para cadastrar clientes",
+  "main": "index.js",
+  "scripts": {
+    "test": "node dist/index"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Geovana Framil",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/prompt-sync": "^4.2.0"
+  }
+}
