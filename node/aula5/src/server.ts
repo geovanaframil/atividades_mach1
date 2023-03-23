@@ -9,28 +9,43 @@ const route = Router();
 app.use(express.json());
 
 route.get("/", (req: Request, res: Response) => {
-  res.json([
-    { product1: "Smartphone", product2: "Notebook", product3: "Tablet" },
-  ]);
+  let name = req.query.name;
+
+  if (name === "product1") {
+    res.json({
+      product1: "Smartphone",
+      message: "No precinho se levar até sexta-feira",
+    });
+  } else if (name === "product2") {
+    res.json({
+      product2: "Notebook",
+      message: "No precinho se levar até sexta-feira",
+    });
+  } else {
+    res.json({ message: "Produto não encontrado" });
+  }
 });
 
 route.get("/details", (req: Request, res: Response) => {
-  res.json([
-    {
+  const name = req.query.name;
+
+  if (name === "product1") {
+    res.json({
       product1: {
         name: "Smartphone Motorola",
         model: "G40",
       },
+    });
+  } else if (name === "product2") {
+    res.json({
       product2: {
         name: "HP",
         model: "1100",
       },
-      product3: {
-        name: "Tablet Samsung",
-        model: "1100",
-      },
-    },
-  ]);
+    });
+  } else {
+    res.json({ message: "Produto não encontrado" });
+  }
 });
 
 app.use(route);
