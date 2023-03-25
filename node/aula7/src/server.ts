@@ -3,15 +3,10 @@ import { Router, Request, Response } from "express";
 import { IStudent } from "./interfaces/student";
 import getLastId from "./utils/getLastId";
 import dados from "../student.json";
+import { messages } from "./enums/messages";
 import fs from "fs";
 
 const students: IStudent[] = dados;
-
-enum messages {
-  studentNotFind = "Estudante não encontrado",
-  studentNotSet = "Estudante não cadastrado",
-  studentRegisterSuccess = "Estudante cadastrado com sucesso",
-}
 
 function handleBodyRegister(returnAPI: any, idStudent: number): IStudent {
   const newStudent = {
