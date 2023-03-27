@@ -2,11 +2,16 @@ import express from "express";
 import { Router, Request, Response } from "express";
 import { IStudent } from "./interfaces/student";
 import getLastId from "./utils/getLastId";
-import dados from "../student.json";
 import { messages } from "./enums/messages";
 import fs from "fs";
 
-const students: IStudent[] = dados;
+function load() {
+  const fileBuffer = fs.readFileSync('./student.json', 'utf-8');
+  const contentJson = JSON.parse(fileBuffer);
+  return contentJson
+}
+
+const students: IStudent[] = load();
 
 function handleBodyRegister(returnAPI: any, idStudent: number): IStudent {
   const newStudent = {
@@ -50,7 +55,7 @@ route.post("/studentRegister", (req: Request, res: Response) => {
     students.push(student);
     const studentJson = JSON.stringify(students);
     console.log(studentJson);
-    fs.writeFileSync("../student.json", studentJson);
+    fs.writeFileSync("./student.json", studentJson);
     res.json({ message: messages.studentRegisterSuccess });
   } else {
     res.json({
