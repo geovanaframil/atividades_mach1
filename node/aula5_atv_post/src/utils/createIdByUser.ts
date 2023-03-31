@@ -3,3 +3,5 @@ function createIdByUser(name: string, email: string): string {
   const emailPrefix = email.slice(0, 3).toLowerCase();
   return `${namePrefix}${emailPrefix}-${Math.floor(Math.random() * 10000)}`;
 }
+
+export default createIdByUser;

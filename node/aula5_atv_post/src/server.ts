@@ -2,6 +2,8 @@ import express from "express";
 import { Router, Request, Response } from "express";
 import { IDataCliente } from "./interfaces/client";
 import saveDataJson from "./utils/saveDataJson";
+import messages from "./enums/messages";
+import createIdByUser from "./utils/createIdByUser";
 
 const app = express();
 const route = Router();
@@ -65,7 +67,10 @@ function verifyBody(body: any): { isValid: boolean; message: string } {
     };
   }
 
-  if (!body.profile.business || typeof body.profile.credit !== "boolean") {
+  if (
+    body.profile.business === undefined ||
+    typeof body.profile.business !== "boolean"
+  ) {
     return {
       isValid: false,
       message: "Campo business é obrigatório e deve receber um boolean",
@@ -76,14 +81,29 @@ function verifyBody(body: any): { isValid: boolean; message: string } {
 }
 
 route.get("/", (req: Request, res: Response) => {
-  res.json({ message: "Hello guys" });
+  res.json({ message: messages.salutation });
 });
 
 route.get("/clientList", (req: Request, res: Response) => {
   if (clients.length !== 0) {
     res.json(clients);
   } else {
-    res.json({ message: "Não há clientes cadastrados" });
+    res.json({ message: messages.unregisteredClient });
+  }
+});
+
+route.post("/clientRegister", (req: Request, res: Response) => {
+  const body = req.body;
+  console.log(body);
+  const validBody = verifyBody(body);
+  if (validBody.isValid) {
+    let idClient = createIdByUser(body.name, body.email);
+    let client = handleBodyRegister(body, idClient);
+    clients.push(client);
+    saveDataJson(clients);
+    res.json({ message: messages.registeredClient });
+  } else {
+    res.json({ message: validBody.message });
   }
 });
 
