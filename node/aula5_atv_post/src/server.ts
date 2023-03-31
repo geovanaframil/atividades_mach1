@@ -80,7 +80,11 @@ route.get("/", (req: Request, res: Response) => {
 });
 
 route.get("/clientList", (req: Request, res: Response) => {
-  res.json(clients);
+  if (clients.length !== 0) {
+    res.json(clients);
+  } else {
+    res.json({ message: "Não há clientes cadastrados" });
+  }
 });
 
 app.use(route);
