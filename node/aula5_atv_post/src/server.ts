@@ -107,5 +107,30 @@ route.post("/clientRegister", (req: Request, res: Response) => {
   }
 });
 
+route.put("/clientUpdate/:id", (req: Request, res: Response) => {
+  const id = req.params.id;
+  const body = req.body;
+  let resultClient = clients.find((item) => item.id === id);
+  let indexObject = clients.findIndex((item) => item.id === id);
+
+  if (resultClient) {
+    const allowedFields = [
+      "name",
+      "age",
+      "email",
+      "type",
+      "credit",
+      "business",
+    ];
+    const receivedFields = Object.keys(body);
+    const invalidFields = receivedFields.filter(
+      (field) => !allowedFields.includes(field)
+    );
+    if (invalidFields.length > 0) {
+      res.json({ message: messages.bodyExample });
+    }
+  }
+});
+
 app.use(route);
 app.listen(3000, () => "server running port 3000");
