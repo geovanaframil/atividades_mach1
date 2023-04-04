@@ -100,8 +100,8 @@ route.post("/clientRegister", (req: Request, res: Response) => {
     let idClient = createIdByUser(body.name, body.email);
     let client = handleBodyRegister(body, idClient);
     clients.push(client);
-    saveDataJson(clients);
     res.json({ message: messages.registeredClient });
+    saveDataJson(clients);
   } else {
     res.json({ message: validBody.message });
   }
@@ -129,6 +129,17 @@ route.put("/clientUpdate/:id", (req: Request, res: Response) => {
     if (invalidFields.length > 0) {
       res.json({ message: messages.bodyExample });
     }
+
+    const updateClient = {
+      ...clients[indexObject],
+      ...body,
+      id: id,
+    };
+    clients[indexObject] = updateClient;
+    res.json({ message: messages.clientUpdated });
+    saveDataJson(clients);
+  } else {
+    res.json({ message: messages.clientUpdatedError });
   }
 });
 
