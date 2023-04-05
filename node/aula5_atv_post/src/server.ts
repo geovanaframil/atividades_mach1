@@ -140,7 +140,7 @@ route.put("/clientUpdate/:id", (req: Request, res: Response) => {
   const isvalidUpdatedClient = verifyBody(updatedClient);
   if (isvalidUpdatedClient) {
     clients[clientIndex] = updatedClient;
-    return res.json({ message: "Cliente atualizado com sucesso" });
+    res.json({ message: "Cliente atualizado com sucesso" });
     saveDataJson(clients);
   } else {
     return res.json({
