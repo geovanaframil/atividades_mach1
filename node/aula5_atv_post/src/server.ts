@@ -110,36 +110,42 @@ route.post("/clientRegister", (req: Request, res: Response) => {
 route.put("/clientUpdate/:id", (req: Request, res: Response) => {
   const id = req.params.id;
   const body = req.body;
-  let resultClient = clients.find((item) => item.id === id);
-  let indexObject = clients.findIndex((item) => item.id === id);
+  let clientIndex = clients.findIndex((item) => item.id === id);
 
-  if (resultClient) {
-    const allowedFields = [
-      "name",
-      "age",
-      "email",
-      "type",
-      "credit",
-      "business",
-    ];
-    const receivedFields = Object.keys(body);
-    const invalidFields = receivedFields.filter(
-      (field) => !allowedFields.includes(field)
-    );
-    if (invalidFields.length > 0) {
-      res.json({ message: messages.bodyExample });
-    }
+  if (clientIndex === -1) {
+    return res.json({ message: messages.clientNotFound });
+  }
 
-    const updateClient = {
-      ...clients[indexObject],
-      ...body,
-      id: id,
-    };
-    clients[indexObject] = updateClient;
-    res.json({ message: messages.clientUpdated });
+  const validProperties = ["name", "age", "email", "profile"];
+  const hasValidProperty = validProperties.some((prop) =>
+    Object.prototype.hasOwnProperty.call(body, prop)
+  );
+  if (!hasValidProperty) {
+    return res.json({ error: "Corpo inválido" });
+  }
+
+  const currentClient = clients[clientIndex];
+  const { name, age, email, profile } = req.body as Partial<IDataCliente>;
+  const updatedClient: IDataCliente = {
+    id,
+    name: name ?? currentClient.name,
+    age: age ?? currentClient.age,
+    email: email ?? currentClient.email,
+    profile: {
+      type: profile?.type ?? currentClient.profile.type,
+      credit: profile?.credit ?? currentClient.profile.credit,
+      business: profile?.business ?? currentClient.profile.business,
+    },
+  };
+  const isvalidUpdatedClient = verifyBody(updatedClient);
+  if (isvalidUpdatedClient) {
+    clients[clientIndex] = updatedClient;
+    return res.json({ message: "Cliente atualizado com sucesso" });
     saveDataJson(clients);
   } else {
-    res.json({ message: messages.clientUpdatedError });
+    return res.json({
+      message: "Dados incorretos para atualizar, verifique o tipo passado.",
+    });
   }
 });
 

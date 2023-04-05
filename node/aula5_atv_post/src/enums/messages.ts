@@ -6,6 +6,7 @@ enum messages {
   bodyExample = `bodyExpected: {name: string; age: number; email: string; profile: { type: string;credit: number; business: boolean;}}`,
   clientUpdated = "Cliente atualizado com sucesso",
   clientUpdatedError = "Cliente não atualizado",
+  clientNotFound = "Cliente não encontrado",
 }
 
 export default messages;
