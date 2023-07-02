@@ -1,0 +1,26 @@
+{
+  "name": "livraria_mach1",
+  "version": "1.0.0",
+  "description": "Livraria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "livraria",
+    "livros",
+    "api",
+    "typescript",
+    "node"
+  ],
+  "author": "Geovana Framil",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "express": "^4.18.2",
+    "ts-node-dev": "^2.0.0"
+  }
+}
