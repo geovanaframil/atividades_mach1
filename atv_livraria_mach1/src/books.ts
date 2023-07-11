@@ -17,7 +17,8 @@ async function insertBook(
   publisherId: number,
   price: number,
   stock: number,
-  languageId: number
+  languageId: number,
+  description: string
 ) {
   const schema = Joi.object({
     name: Joi.string().required(),
@@ -26,6 +27,7 @@ async function insertBook(
     price: Joi.number().required(),
     stock: Joi.number().required(),
     languageId: Joi.number().required(),
+    description: Joi.string().required(),
   });
 
   const { error } = schema.validate({
@@ -35,6 +37,7 @@ async function insertBook(
     price,
     stock,
     languageId,
+    description,
   });
 
   if (error) {
@@ -42,10 +45,10 @@ async function insertBook(
   }
 
   const query = `INSERT INTO livros(
-                  nome_livro, cod_barra, id_editora, valor_livro, estoque, id_idioma, descricao, deletado_em)
-                VALUES ($1, $2, $3, $4, $5, $6)`;
+                  nome_livro, cod_barra, id_editora, valor_livro, estoque, id_idioma, descricao)
+                VALUES ($1, $2, $3, $4, $5, $6, $7)`;
 
-  const params = [name, barcode, publisherId, price, stock, languageId];
+  const params = [name, barcode, publisherId, price, stock, languageId, description];
 
   await executeQuery(query, params);
 }
@@ -68,9 +71,11 @@ route.post("/books/register", async (req: Request, res: Response) => {
     body.publisherId,
     body.price,
     body.stock,
-    body.languageId
+    body.languageId,
+    body.description
   );
-  
+
+  res.json({sucess: 'Livro registrado com sucesso'})
 });
 
 export { route, bodyParser };
