@@ -63,19 +63,24 @@ route.get("/booksList", async (req: Request, res: Response) => {
 });
 
 route.post("/books/register", async (req: Request, res: Response) => {
-  const body = req.body;
+  try {
+    const body = req.body;
 
-  await insertBook(
-    body.name,
-    body.barcode,
-    body.publisherId,
-    body.price,
-    body.stock,
-    body.languageId,
-    body.description
-  );
+    await insertBook(
+      body.name,
+      body.barcode,
+      body.publisherId,
+      body.price,
+      body.stock,
+      body.languageId,
+      body.description
+    );
 
-  res.json({sucess: 'Livro registrado com sucesso'})
+    res.status(200).json({ success: "Livro registrado com sucesso" });
+  } catch (error:any) {
+    console.error(error);
+    res.status(400).json({ error: error.message });
+  }
 });
 
 export { route, bodyParser };
